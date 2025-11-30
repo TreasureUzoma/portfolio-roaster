@@ -30,6 +30,7 @@
 	},
 	"dependencies": {
 		"@fontsource/inter": "^5.2.8",
+		"@google/genai": "^1.30.0",
 		"add": "^2.0.6",
 		"lucide-svelte": "^0.555.0",
 		"tailwindcss": "^4.1.17"

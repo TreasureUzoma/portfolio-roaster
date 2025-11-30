@@ -2,14 +2,14 @@
 	import * as Card from "$lib/components/ui/card/index.js";
 	import { Input } from "$lib/components/ui/input/index.js";
 	import { Label } from "$lib/components/ui/label/index.js";
-	import { enhance } from "$app/forms";
-	// import { Loader2 } from "lucide-svelte";
+	import { enhance } from "$app/forms"	
+	import { Loader } from "lucide-svelte";
 
 	let { form } = $props();
 	let loading = $state(false);
 </script>
 
-<div class="flex flex-col items-center justify-center h-screen">
+<div class="flex flex-col items-center justify-center h-screen px-7">
 	<Card.Root class="w-[400px]">
 		<Card.Header>
 			<Card.Title>Portfolio Roaster</Card.Title>
@@ -46,7 +46,7 @@
 						disabled={loading}
 					>
 						{#if loading}
-							<!-- <Loader2 class="mr-2 h-4 w-4 animate-spin" /> -->
+							<Loader class="mr-2 h-4 w-4 animate-spin" /> 
 							Roasting...
 						{:else}
 							Roast It

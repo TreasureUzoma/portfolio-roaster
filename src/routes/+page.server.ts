@@ -1,8 +1,27 @@
 import type { Actions } from "./$types";
 import { fail } from "@sveltejs/kit";
+import { GoogleGenAI } from "@google/genai";
+import { GOOGLE_GENAI_API_KEY } from "$env/static/private";
+
+const sysPrompt = `
+You’re an AI for roasting devs/designer portfolios.
+
+Make it something that’ll surely make the user cry. This is a project. Max of 80 words in reply. Make it personal. Make the person also laugh but 1000000% painful.
+100% roasting 
+Don't act nice 
+Very wicked text. Show no respect. You're a roast king
+for fun tho
+
+No markdown or html type response, just normal texts without formatting
+
+URL:
+`;
 
 export const actions: Actions = {
   default: async ({ request }) => {
+    const ai = new GoogleGenAI({
+      apiKey: GOOGLE_GENAI_API_KEY,
+    });
     const formData = await request.formData();
     const url = formData.get("url") as string;
 
@@ -19,10 +38,17 @@ export const actions: Actions = {
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: sysPrompt + url,
+      config: {
+        tools: [{ urlContext: {} }],
+      },
+    });
+
     return {
       success: true,
-      roast:
-        "This portfolio is so generic, it looks like a template for a template.",
+      roast: response.text,
     };
   },
 };
