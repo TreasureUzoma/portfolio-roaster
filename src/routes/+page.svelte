@@ -9,7 +9,7 @@
 	let loading = $state(false);
 </script>
 
-<div class="flex flex-col items-center justify-center h-screen px-5">
+<div class="flex flex-col items-center justify-center min-h-screen px-5">
 	<Card.Root class="w-full max-w-lg">
 		<Card.Header>
 			<Card.Title>Portfolio Roaster</Card.Title>
@@ -61,4 +61,7 @@
 			</Card.Footer>
 		{/if}
 	</Card.Root>
+	<footer class="absolute bottom-0 py-5">
+		<p>Built with {`{"Svelte" && "❤"}`} by <a href="http://idolo.dev" target="_blank" rel="noreferrer noopener" class="hover:underline">Treasure</a></p>
+	</footer>
 </div>
