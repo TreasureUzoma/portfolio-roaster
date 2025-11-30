@@ -13,6 +13,7 @@ Very wicked text. Show no respect. You're a roast king
 for fun tho
 
 No markdown or html type response, just normal texts without formatting
+Today is ${new Date()}
 
 URL:
 `;
