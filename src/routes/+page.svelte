@@ -10,7 +10,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center h-screen px-5">
-	<Card.Root class="max-w-lg">
+	<Card.Root class="w-full max-w-lg">
 		<Card.Header>
 			<Card.Title>Portfolio Roaster</Card.Title>
 			<Card.Description>Roast your portfolio with AI</Card.Description>
