@@ -11,14 +11,14 @@ An AI-powered application built with SvelteKit that roasts your portfolio with w
 
 ## 🚀 Stacks / Technologies
 
-| Technology | Link |
-| :--- | :--- |
-| **SvelteKit** | [https://kit.svelte.dev/](https://kit.svelte.dev/) |
-| **Tailwind CSS** | [https://tailwindcss.com/](https://tailwindcss.com/) |
-| **shadcn-svelte** | [https://www.shadcn-svelte.com/](https://www.shadcn-svelte.com/) |
-| **Google Generative AI** | [https://ai.google.dev/](https://ai.google.dev/) |
-| **TypeScript** | [https://www.typescriptlang.org/](https://www.typescriptlang.org/) |
-| **Vite** | [https://vitejs.dev/](https://vitejs.dev/) |
+| Technology               | Link                                                               |
+| :----------------------- | :----------------------------------------------------------------- |
+| **SvelteKit**            | [https://kit.svelte.dev/](https://kit.svelte.dev/)                 |
+| **Tailwind CSS**         | [https://tailwindcss.com/](https://tailwindcss.com/)               |
+| **shadcn-svelte**        | [https://www.shadcn-svelte.com/](https://www.shadcn-svelte.com/)   |
+| **Google Generative AI** | [https://ai.google.dev/](https://ai.google.dev/)                   |
+| **TypeScript**           | [https://www.typescriptlang.org/](https://www.typescriptlang.org/) |
+| **Vite**                 | [https://vitejs.dev/](https://vitejs.dev/)                         |
 
 ## 📦 Installation
 
@@ -26,16 +26,18 @@ To get a local copy up and running, please follow these simple steps.
 
 1.  **Clone the repository**
     ```sh
-    git clone https://github.com/your-username/portfolio-roaster.git
+    git clone https://github.com/TreasureUzoma/portfolio-roaster.git
     ```
 2.  **Navigate to the project directory**
     ```sh
     cd portfolio-roaster
     ```
 3.  **Install dependencies**
+
     ```sh
     npm install
     ```
+
     (or `pnpm install` or `yarn install`)
 
 4.  **Set up environment variables**
