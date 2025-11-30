@@ -1,22 +1,18 @@
-import type { Actions, PageServerLoad } from "./$types";
-import { superValidate } from "sveltekit-superforms";
-import { zod } from "sveltekit-superforms/adapters";
-import { formSchema } from "./schema";
+import type { Actions } from "./$types";
 import { fail } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async () => {
-  console.log("Loading form with schema:", formSchema);
-  return {
-    form: await superValidate(zod(formSchema)),
-  };
-};
-
 export const actions: Actions = {
-  default: async (event) => {
-    const form = await superValidate(event, zod(formSchema));
-    if (!form.valid) {
+  default: async ({ request }) => {
+    const formData = await request.formData();
+    const url = formData.get("url") as string;
+
+    const urlRegex =
+      /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+
+    if (!url || !urlRegex.test(url)) {
       return fail(400, {
-        form,
+        url,
+        error: "Please enter a valid URL.",
       });
     }
 
@@ -24,7 +20,7 @@ export const actions: Actions = {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return {
-      form,
+      success: true,
       roast:
         "This portfolio is so generic, it looks like a template for a template.",
     };
