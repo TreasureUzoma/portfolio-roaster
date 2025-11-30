@@ -9,8 +9,8 @@
 	let loading = $state(false);
 </script>
 
-<div class="flex flex-col items-center justify-center h-screen px-7">
-	<Card.Root class="w-[400px]">
+<div class="flex flex-col items-center justify-center h-screen px-5">
+	<Card.Root class="max-w-lg">
 		<Card.Header>
 			<Card.Title>Portfolio Roaster</Card.Title>
 			<Card.Description>Roast your portfolio with AI</Card.Description>
