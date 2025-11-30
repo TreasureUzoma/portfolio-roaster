@@ -23,6 +23,7 @@ export const actions: Actions = {
     const ai = new GoogleGenAI({
       apiKey: GOOGLE_GENAI_API_KEY,
     });
+
     const formData = await request.formData();
     const url = formData.get("url") as string;
 
@@ -36,9 +37,6 @@ export const actions: Actions = {
       });
     }
 
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: sysPrompt + url,
@@ -49,6 +47,7 @@ export const actions: Actions = {
 
     return {
       success: true,
+      url,
       roast: response.text,
     };
   },
