@@ -32,8 +32,9 @@
 				{@html marked(roast)}
 			</div>
 		</Card.Content>
-		<Card.Footer class="flex justify-between gap-4">
-			<Button variant="outline" onclick={onReset}>
+		<Card.Footer class="flex flex-col gap-4">
+			<div class="flex justify-between gap-4">
+                <Button variant="outline" onclick={onReset}>
 				<RefreshCw class="mr-2 h-4 w-4" />
 				Roast Another
 			</Button>
@@ -45,6 +46,8 @@
 					Copy Roast
 				{/if}
 			</Button>
+        </div>
+        <p class="text-xs text-muted-foreground">Roasted by <a href="https://portfolio-roaster-sv.vercel.app/" target="_blank" rel="noreferrer noopener" class="text-primary hover:underline">https://portfolio-roaster-sv.vercel.app</a></p>
 		</Card.Footer>
 	</Card.Root>
 </div>
